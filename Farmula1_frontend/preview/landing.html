@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Farmula1 Clean Hero Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#19e62b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#0a110a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    animation: {
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'wind': 'wind 15s ease-in-out infinite alternate',
+                        'float-slow': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 10s ease-in-out infinite 2s',
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, filter: 'drop-shadow(0 0 2px #19e62b)' },
+                            '50%': { opacity: .7, filter: 'drop-shadow(0 0 8px #19e62b)' },
+                        },
+                        wind: {
+                            '0%': { transform: 'scale(1.1) translateX(-1%) translateY(-1%) rotate(0deg)' },
+                            '100%': { transform: 'scale(1.1) translateX(1%) translateY(1%) rotate(0.5deg)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        .glass {
+            background: rgba(10, 20, 10, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .hero-gradient {
+            background: linear-gradient(180deg, rgba(10, 17, 10, 0.2) 0%, rgba(10, 17, 10, 0.9) 100%);
+        }
+        .glow-line {
+            background: linear-gradient(90deg, transparent, rgba(25, 230, 43, 0.3), transparent);
+            height: 1px;
+            filter: blur(1px);
+        }
+        .card-reveal {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+        .intelligence-card:hover .card-reveal {
+            max-height: 200px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white overflow-x-hidden">
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-4 py-8">
+<div class="layout-content-container w-full max-w-[1200px]">
+<nav class="glass rounded-full px-6 py-3 flex items-center justify-between shadow-2xl shadow-primary/5">
+<div class="flex items-center gap-3 group cursor-pointer">
+<div class="size-9 bg-primary rounded-full flex items-center justify-center text-background-dark shadow-[0_0_15px_rgba(25,230,43,0.4)]">
+<span class="material-symbols-outlined text-xl font-bold">agriculture</span>
+</div>
+<h2 class="text-white text-2xl font-black tracking-tighter">Farmula<span class="text-primary">1</span></h2>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-all hover:tracking-widest uppercase tracking-tight" href="#">Platform</a>
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-all hover:tracking-widest uppercase tracking-tight" href="#">Solutions</a>
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-all hover:tracking-widest uppercase tracking-tight" href="#">Sustainability</a>
+<a class="text-white/70 hover:text-primary text-sm font-semibold transition-all hover:tracking-widest uppercase tracking-tight" href="#">Intelligence</a>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center rounded-full h-10 px-6 bg-primary text-background-dark text-sm font-black transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(25,230,43,0.4)]">
+                    LOG IN
+                </button>
+</div>
+</nav>
+</div>
+</header>
+<main class="relative min-h-screen flex items-center justify-center pt-20">
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<img alt="Cinematic drone view of a lush green farm" class="w-full h-full object-cover animate-wind opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnJ1Yu93SkDUbioqOzfQka9wLgFBu71XWh0JsYzzXxiv7fjgjUXXot-bzmpAiC7GCr04Us-_27I_q6t9wQy9oZ2EKX7cfPQTqL3XGgfu7e6PenXdFLiBnc4fvf9CuqNihcqxON7MPYkH22TW_iF_yN5d7vnAhN9rr0QzfE-S7FdYKm0cwQSxtY9EKxjn_He5uqr9qNbPPfbgW936hdwWv_RoOtEiMpwW2P17c4kH8xnAd9HFnTJCqoYzfW8pSbXYO7gSiKGFuBdsI"/>
+</div>
+<div class="layout-content-container relative z-20 w-full max-w-[1200px] px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="flex flex-col gap-10 max-w-[640px]">
+<div class="inline-flex items-center gap-3 px-4 py-2 rounded-full glass border border-primary/50 w-fit animate-pulse-glow">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+</span>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-primary">System Online: Live Intelligence</span>
+</div>
+<h1 class="text-white text-6xl md:text-8xl font-black leading-[1] tracking-tighter">
+                The <span class="text-primary italic">Formula</span> for Future Yield.
+            </h1>
+<p class="text-white/80 text-xl font-medium leading-relaxed max-w-[500px]">
+                Farmula1 integrates satellite telemetry and neural analytics into a unified dashboard for the modern agronomist.
+            </p>
+<div class="flex flex-wrap gap-5 mt-4">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-gradient-to-r from-primary to-green-500 text-background-dark text-lg font-black shadow-xl shadow-primary/20 hover:shadow-primary/50 transition-all hover:-translate-y-1 group">
+                    Deploy System
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">bolt</span>
+</button>
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center rounded-full h-14 px-8 glass text-white text-lg font-bold border border-white/20 hover:bg-white/10 transition-all">
+                    View Demo
+                </button>
+</div>
+</div>
+<div class="relative h-[600px] hidden lg:flex items-center justify-center">
+<div class="absolute inset-0 pointer-events-none">
+<div class="glow-line absolute top-1/2 left-0 w-full rotate-[15deg] opacity-20"></div>
+<div class="glow-line absolute top-1/3 left-0 w-full -rotate-[10deg] opacity-10"></div>
+</div>
+<div class="intelligence-card glass p-8 rounded-2xl w-full max-w-[440px] shadow-2xl relative overflow-hidden group/card cursor-default border-primary/10 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2">
+<div class="absolute -right-4 -top-4 size-32 bg-primary/5 blur-3xl group-hover/card:bg-primary/20 transition-all"></div>
+<div class="flex justify-between items-start mb-8">
+<div>
+<p class="text-[10px] font-black text-primary tracking-widest uppercase mb-1">Telemetry 01-A</p>
+<h3 class="text-white text-2xl font-black flex items-center gap-2">
+                            Farm Intelligence
+                        </h3>
+</div>
+<span class="material-symbols-outlined text-primary animate-pulse">sensors</span>
+</div>
+<div class="space-y-6">
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-end">
+<p class="text-white/60 text-xs font-bold uppercase">Resource Efficiency</p>
+<p class="text-primary text-xl font-black">94.2%</p>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/50 to-primary w-[94%] shadow-[0_0_10px_#19e62b]"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 group-hover/card:border-primary/20 transition-all">
+<p class="text-white/40 text-[10px] font-bold uppercase">Soil Moisture</p>
+<p class="text-white text-2xl font-black mt-1">42.8%</p>
+</div>
+<div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 group-hover/card:border-primary/20 transition-all">
+<p class="text-white/40 text-[10px] font-bold uppercase">Active Nodes</p>
+<p class="text-white text-2xl font-black mt-1">1,402</p>
+</div>
+</div>
+<div class="card-reveal pt-4 border-t border-white/10 space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col">
+<p class="text-primary/70 text-[10px] font-bold uppercase">pH Levels</p>
+<p class="text-white text-lg font-bold">6.8 <span class="text-xs text-white/40">Optimal</span></p>
+</div>
+<div class="flex flex-col">
+<p class="text-primary/70 text-[10px] font-bold uppercase">Nitrogen Density</p>
+<p class="text-white text-lg font-bold">48 <span class="text-xs text-white/40">mg/kg</span></p>
+</div>
+<div class="flex flex-col">
+<p class="text-primary/70 text-[10px] font-bold uppercase">Phosphorus</p>
+<p class="text-white text-lg font-bold">12 <span class="text-xs text-white/40">ppm</span></p>
+</div>
+<div class="flex flex-col">
+<p class="text-primary/70 text-[10px] font-bold uppercase">Potassium</p>
+<p class="text-white text-lg font-bold">185 <span class="text-xs text-white/40">ppm</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -top-6 -right-12 glass p-5 rounded-2xl border border-primary/30 flex items-center gap-4 animate-float-slow shadow-xl">
+<div class="size-12 bg-primary/10 rounded-full flex items-center justify-center text-primary shadow-[inset_0_0_10px_rgba(25,230,43,0.2)]">
+<span class="material-symbols-outlined fill-1">monitoring</span>
+</div>
+<div>
+<p class="text-white font-black text-sm uppercase tracking-tighter">Live Status</p>
+<p class="text-primary text-[10px] font-bold tracking-[0.1em]">98.2% INTEGRITY</p>
+</div>
+</div>
+<div class="absolute -bottom-4 -left-12 glass p-5 rounded-2xl border border-white/10 flex flex-col gap-4 min-w-[220px] animate-float-delayed shadow-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span>
+<p class="text-white text-xs font-black uppercase tracking-wider">AI Optimizer</p>
+</div>
+<div class="space-y-2">
+<div class="bg-primary/10 border border-primary/20 rounded-lg p-2">
+<p class="text-primary text-[9px] font-black uppercase">Next Action</p>
+<p class="text-white text-[11px] font-medium">Initialize Irrigation Zone 4</p>
+</div>
+</div>
+</div>
+<div class="absolute inset-0 -z-10 pointer-events-none opacity-20" style="background-image: radial-gradient(#19e62b 1px, transparent 1px); background-size: 40px 40px;">
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3">
+<p class="text-white/40 text-[9px] font-black uppercase tracking-[0.5em]">Systems Terminal</p>
+<div class="w-6 h-10 rounded-full border-2 border-white/10 flex justify-center p-1">
+<div class="w-1 h-2 bg-primary rounded-full animate-bounce"></div>
+</div>
+</div>
+</main>
+<section class="relative z-20 pb-20 px-6 mt-[-40px]">
+<div class="layout-content-container mx-auto max-w-[1200px]">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="flex flex-col gap-3 p-8 rounded-2xl glass border-white/5 hover:border-primary/20 transition-all group">
+<p class="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">Platform Users</p>
+<p class="text-white text-4xl font-black group-hover:text-primary transition-colors">24,812</p>
+<div class="flex items-center gap-1 text-primary text-[10px] font-black">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>LIVE SESSIONS ACTIVE</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-8 rounded-2xl glass border-white/5 hover:border-primary/20 transition-all group">
+<p class="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">Yield Optimization</p>
+<p class="text-white text-4xl font-black group-hover:text-primary transition-colors">+38.5%</p>
+<div class="flex items-center gap-1 text-primary text-[10px] font-black">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>CERTIFIED ALGORITHM</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-8 rounded-2xl glass border-white/5 hover:border-primary/20 transition-all group">
+<p class="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">Carbon Offset</p>
+<p class="text-white text-4xl font-black group-hover:text-primary transition-colors">1.42M</p>
+<div class="flex items-center gap-1 text-primary text-[10px] font-black">
+<span class="material-symbols-outlined text-sm">eco</span>
+<span>TONS CO2E REDUCTION</span>
+</div>
+</div>
+<div class="flex flex-col gap-3 p-8 rounded-2xl glass border-white/5 hover:border-primary/20 transition-all group">
+<p class="text-white/40 text-[10px] font-black uppercase tracking-[0.2em]">Neural Latency</p>
+<p class="text-white text-4xl font-black group-hover:text-primary transition-colors">42ms</p>
+<div class="flex items-center gap-1 text-primary text-[10px] font-black">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span>REAL-TIME STREAMING</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+</body></html>

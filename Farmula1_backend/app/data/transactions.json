@@ -1,0 +1,93 @@
+[
+  {
+    "product": "Tomato",
+    "seller": "Priya",
+    "buyer": "Priya",
+    "quantity_traded": "10 Kg",
+    "id": 13
+  },
+  {
+    "product": "Rice",
+    "seller": "Mritiika",
+    "buyer": "Priya",
+    "quantity_traded": "40 Kg",
+    "id": 12
+  },
+  {
+    "product": "Rice",
+    "seller": "Kavya",
+    "buyer": "Priya",
+    "quantity_traded": "10 Kg",
+    "id": 11
+  },
+  {
+    "product": "Rice",
+    "seller": "Kavya",
+    "buyer": "Priya",
+    "quantity_traded": "20 Kg",
+    "id": 10
+  },
+  {
+    "product": "Tomato",
+    "seller": "Asin",
+    "buyer": "Priya",
+    "quantity_traded": "40 Kg",
+    "id": 9
+  },
+  {
+    "product": "Tomato",
+    "seller": "Asin",
+    "buyer": "Suba",
+    "quantity_traded": "40 Kg",
+    "id": 8
+  },
+  {
+    "product": "Tomato",
+    "seller": "Asin",
+    "buyer": "Abi",
+    "quantity_traded": "20 Kg",
+    "id": 7
+  },
+  {
+    "product": "rice",
+    "seller": "Kavya",
+    "buyer": "priya",
+    "quantity_traded": "20 Kg",
+    "id": 6
+  },
+  {
+    "product": "Rice",
+    "seller": "Kavya",
+    "buyer": "Mrits",
+    "quantity_traded": "70 Kg",
+    "id": 5
+  },
+  {
+    "product": "Rice",
+    "seller": "Priya",
+    "buyer": "Mrits",
+    "quantity_traded": "50 Kg",
+    "id": 4
+  },
+  {
+    "product": "Tomato",
+    "seller": "Shruzz",
+    "buyer": "Priya",
+    "quantity_traded": "50 Kg",
+    "id": 3
+  },
+  {
+    "product": "Tomato",
+    "seller": "Mrits",
+    "buyer": "Priya",
+    "quantity_traded": "50 Kg",
+    "id": 2
+  },
+  {
+    "product": "Tomato",
+    "seller": "Ramya",
+    "buyer": "Priya",
+    "quantity_traded": "70 Kg",
+    "id": 1
+  }
+]

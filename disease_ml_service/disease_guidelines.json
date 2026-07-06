@@ -1,0 +1,573 @@
+{
+  "Apple___Apple_scab": {
+    "treatment": [
+      "Apply fungicide containing Captan or Mancozeb",
+      "Remove infected leaves and fruits",
+      "Prune affected branches",
+      "Repeat fungicide spray every 7–10 days"
+    ],
+    "prevention": [
+      "Use scab-resistant apple varieties",
+      "Ensure proper air circulation",
+      "Remove fallen leaves",
+      "Avoid overhead irrigation"
+    ]
+  },
+
+  "Apple___Black_rot": {
+    "treatment": [
+      "Remove infected fruits and branches",
+      "Apply copper-based fungicide",
+      "Disinfect pruning tools",
+      "Destroy infected debris"
+    ],
+    "prevention": [
+      "Practice proper pruning",
+      "Maintain orchard sanitation",
+      "Avoid plant stress",
+      "Monitor trees regularly"
+    ]
+  },
+
+  "Apple___Cedar_apple_rust": {
+    "treatment": [
+      "Apply fungicide containing Myclobutanil",
+      "Remove infected leaves",
+      "Eliminate nearby juniper hosts",
+      "Repeat spray during early season"
+    ],
+    "prevention": [
+      "Plant resistant apple varieties",
+      "Remove nearby junipers",
+      "Ensure good airflow",
+      "Monitor early symptoms"
+    ]
+  },
+
+  "Apple___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Continue regular monitoring",
+      "Maintain soil nutrients",
+      "Ensure adequate irrigation"
+    ],
+    "prevention": [
+      "Practice seasonal pruning",
+      "Maintain orchard hygiene",
+      "Monitor pests regularly",
+      "Use balanced fertilization"
+    ]
+  },
+
+  "Blueberry___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain soil acidity",
+      "Regular pruning",
+      "Ensure proper watering"
+    ],
+    "prevention": [
+      "Use mulch to retain moisture",
+      "Avoid waterlogging",
+      "Maintain spacing",
+      "Monitor plant health"
+    ]
+  },
+
+  "Cherry_(including_sour)___Powdery_mildew": {
+    "treatment": [
+      "Apply sulfur-based fungicide",
+      "Remove infected leaves",
+      "Improve air circulation",
+      "Avoid excess nitrogen fertilizer"
+    ],
+    "prevention": [
+      "Use resistant varieties",
+      "Avoid dense planting",
+      "Prune regularly",
+      "Monitor humidity levels"
+    ]
+  },
+
+  "Cherry_(including_sour)___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain proper irrigation",
+      "Apply organic compost",
+      "Inspect foliage weekly"
+    ],
+    "prevention": [
+      "Prune trees annually",
+      "Maintain soil health",
+      "Avoid overwatering",
+      "Monitor pests"
+    ]
+  },
+
+  "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot": {
+    "treatment": [
+      "Apply fungicide containing Azoxystrobin",
+      "Remove severely infected leaves",
+      "Improve air circulation",
+      "Monitor disease spread"
+    ],
+    "prevention": [
+      "Use resistant hybrids",
+      "Rotate crops annually",
+      "Destroy crop residues",
+      "Avoid excess nitrogen"
+    ]
+  },
+
+  "Corn_(maize)___Common_rust": {
+    "treatment": [
+      "Apply fungicide containing Propiconazole",
+      "Remove infected leaves",
+      "Reduce field humidity",
+      "Monitor disease progression"
+    ],
+    "prevention": [
+      "Use rust-resistant varieties",
+      "Avoid overcrowding",
+      "Rotate crops",
+      "Monitor early symptoms"
+    ]
+  },
+
+  "Corn_(maize)___Northern_Leaf_Blight": {
+    "treatment": [
+      "Apply fungicide containing Pyraclostrobin",
+      "Remove infected foliage",
+      "Improve airflow",
+      "Apply fungicide before rain"
+    ],
+    "prevention": [
+      "Plant resistant hybrids",
+      "Rotate crops",
+      "Destroy infected debris",
+      "Avoid overhead irrigation"
+    ]
+  },
+
+  "Corn_(maize)___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain balanced fertilization",
+      "Ensure proper irrigation",
+      "Monitor crop growth"
+    ],
+    "prevention": [
+      "Practice crop rotation",
+      "Maintain soil health",
+      "Monitor pests",
+      "Avoid overcrowding"
+    ]
+  },
+
+  "Grape___Black_rot": {
+    "treatment": [
+      "Apply fungicide containing Mancozeb",
+      "Remove infected grapes",
+      "Prune diseased vines",
+      "Destroy fallen debris"
+    ],
+    "prevention": [
+      "Ensure good air circulation",
+      "Use resistant varieties",
+      "Avoid excessive moisture",
+      "Practice vineyard sanitation"
+    ]
+  },
+
+  "Grape___Esca_(Black_Measles)": {
+    "treatment": [
+      "Remove infected vines",
+      "Avoid pruning during wet weather",
+      "Apply protective fungicide",
+      "Disinfect tools"
+    ],
+    "prevention": [
+      "Use healthy planting material",
+      "Avoid vine stress",
+      "Ensure proper drainage",
+      "Monitor vines annually"
+    ]
+  },
+
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "treatment": [
+      "Apply copper-based fungicide",
+      "Remove infected leaves",
+      "Improve air circulation",
+      "Avoid excessive irrigation"
+    ],
+    "prevention": [
+      "Maintain proper spacing",
+      "Remove fallen leaves",
+      "Avoid water stagnation",
+      "Monitor regularly"
+    ]
+  },
+
+  "Grape___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain soil nutrition",
+      "Regular pruning",
+      "Ensure adequate sunlight"
+    ],
+    "prevention": [
+      "Practice vineyard hygiene",
+      "Monitor pests",
+      "Avoid waterlogging",
+      "Use balanced fertilization"
+    ]
+  },
+
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "treatment": [
+      "Remove infected trees",
+      "Control psyllid vectors",
+      "Apply systemic insecticides",
+      "Improve tree nutrition"
+    ],
+    "prevention": [
+      "Use disease-free seedlings",
+      "Control insect vectors",
+      "Monitor trees frequently",
+      "Avoid planting near infected orchards"
+    ]
+  },
+
+  "Peach___Bacterial_spot": {
+    "treatment": [
+      "Apply copper-based bactericide",
+      "Remove infected leaves",
+      "Avoid overhead irrigation",
+      "Disinfect tools"
+    ],
+    "prevention": [
+      "Use resistant varieties",
+      "Ensure good airflow",
+      "Avoid wet foliage",
+      "Maintain orchard sanitation"
+    ]
+  },
+
+  "Peach___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain irrigation schedule",
+      "Apply organic manure",
+      "Inspect leaves weekly"
+    ],
+    "prevention": [
+      "Prune regularly",
+      "Avoid excess nitrogen",
+      "Monitor pests",
+      "Maintain soil health"
+    ]
+  },
+
+  "Pepper,_bell___Bacterial_spot": {
+    "treatment": [
+      "Apply copper-based spray",
+      "Remove infected leaves",
+      "Avoid working when plants are wet",
+      "Disinfect equipment"
+    ],
+    "prevention": [
+      "Use certified seeds",
+      "Avoid overhead irrigation",
+      "Rotate crops",
+      "Maintain field hygiene"
+    ]
+  },
+
+  "Pepper,_bell___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain balanced fertilization",
+      "Ensure proper watering",
+      "Inspect foliage regularly"
+    ],
+    "prevention": [
+      "Practice crop rotation",
+      "Maintain spacing",
+      "Monitor pests",
+      "Use healthy seedlings"
+    ]
+  },
+
+  "Potato___Early_blight": {
+    "treatment": [
+      "Apply Mancozeb fungicide",
+      "Remove infected leaves",
+      "Reduce leaf wetness",
+      "Repeat spray every 10 days"
+    ],
+    "prevention": [
+      "Use certified seed potatoes",
+      "Avoid overhead watering",
+      "Rotate crops",
+      "Remove plant debris"
+    ]
+  },
+
+  "Potato___Late_blight": {
+    "treatment": [
+      "Apply systemic fungicide immediately",
+      "Remove severely infected plants",
+      "Avoid irrigation during humid periods",
+      "Apply protective sprays"
+    ],
+    "prevention": [
+      "Plant resistant varieties",
+      "Monitor weather conditions",
+      "Destroy infected tubers",
+      "Avoid dense planting"
+    ]
+  },
+
+  "Potato___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain soil moisture",
+      "Monitor foliage health",
+      "Ensure proper fertilization"
+    ],
+    "prevention": [
+      "Practice crop rotation",
+      "Use healthy seed tubers",
+      "Maintain field sanitation",
+      "Monitor pests"
+    ]
+  },
+
+  "Raspberry___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain irrigation",
+      "Regular pruning",
+      "Monitor plant vigor"
+    ],
+    "prevention": [
+      "Ensure proper spacing",
+      "Avoid waterlogging",
+      "Maintain soil nutrients",
+      "Inspect plants weekly"
+    ]
+  },
+
+  "Soybean___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Maintain balanced fertilization",
+      "Ensure adequate irrigation",
+      "Monitor crop growth"
+    ],
+    "prevention": [
+      "Practice crop rotation",
+      "Monitor pests",
+      "Maintain soil health",
+      "Avoid overcrowding"
+    ]
+  },
+
+  "Strawberry___Leaf_scorch": {
+    "treatment": [
+      "Apply fungicide containing Myclobutanil",
+      "Remove infected leaves",
+      "Reduce humidity",
+      "Avoid overhead watering"
+    ],
+    "prevention": [
+      "Use resistant varieties",
+      "Maintain proper spacing",
+      "Remove old leaves",
+      "Monitor early symptoms"
+    ]
+  },
+
+  "Strawberry___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Ensure proper irrigation",
+      "Apply organic compost",
+      "Monitor plant health"
+    ],
+    "prevention": [
+      "Avoid water stagnation",
+      "Maintain soil fertility",
+      "Use healthy runners",
+      "Monitor pests"
+    ]
+  },
+
+  "Tomato___Bacterial_spot": {
+    "treatment": [
+      "Apply copper-based bactericide",
+      "Remove infected leaves",
+      "Avoid overhead watering",
+      "Disinfect garden tools"
+    ],
+    "prevention": [
+      "Use certified seeds",
+      "Maintain field hygiene",
+      "Rotate crops",
+      "Avoid wet foliage"
+    ]
+  },
+
+  "Tomato___Early_blight": {
+    "treatment": [
+      "Apply Chlorothalonil fungicide",
+      "Remove infected foliage",
+      "Improve air circulation",
+      "Repeat treatment every 7 days"
+    ],
+    "prevention": [
+      "Use resistant varieties",
+      "Maintain spacing",
+      "Rotate crops",
+      "Avoid overhead irrigation"
+    ]
+  },
+
+  "Tomato___Late_blight": {
+    "treatment": [
+      "Apply copper fungicide",
+      "Remove infected plants",
+      "Reduce leaf wetness",
+      "Apply fungicide before rain"
+    ],
+    "prevention": [
+      "Plant disease-free seedlings",
+      "Avoid water stagnation",
+      "Monitor weather",
+      "Destroy plant debris"
+    ]
+  },
+
+  "Tomato___Leaf_Mold": {
+    "treatment": [
+      "Apply sulfur-based fungicide",
+      "Improve ventilation",
+      "Remove infected leaves",
+      "Avoid excess humidity"
+    ],
+    "prevention": [
+      "Maintain proper spacing",
+      "Avoid overhead watering",
+      "Monitor greenhouse humidity",
+      "Use resistant varieties"
+    ]
+  },
+
+  "Tomato___Septoria_leaf_spot": {
+    "treatment": [
+      "Apply fungicide containing Chlorothalonil",
+      "Remove infected leaves",
+      "Avoid overhead irrigation",
+      "Repeat treatment weekly"
+    ],
+    "prevention": [
+      "Practice crop rotation",
+      "Maintain field hygiene",
+      "Use mulching",
+      "Monitor plants frequently"
+    ]
+  },
+
+  "Tomato___Spider_mites Two-spotted_spider_mite": {
+    "treatment": [
+      "Apply miticide or neem oil",
+      "Spray water to reduce mites",
+      "Remove heavily infested leaves",
+      "Increase humidity"
+    ],
+    "prevention": [
+      "Monitor underside of leaves",
+      "Avoid dry conditions",
+      "Introduce natural predators",
+      "Maintain plant health"
+    ]
+  },
+
+  "Tomato___Target_Spot": {
+    "treatment": [
+      "Apply fungicide containing Azoxystrobin",
+      "Remove infected leaves",
+      "Improve airflow",
+      "Avoid wet foliage"
+    ],
+    "prevention": [
+      "Use resistant varieties",
+      "Practice crop rotation",
+      "Maintain spacing",
+      "Monitor disease progression"
+    ]
+  },
+
+  "Tomato___Tomato_mosaic_virus": {
+    "treatment": [
+      "Remove infected plants",
+      "Disinfect tools immediately",
+      "Avoid plant handling",
+      "Isolate affected area"
+    ],
+    "prevention": [
+      "Use certified virus-free seeds",
+      "Avoid tobacco handling",
+      "Wash hands regularly",
+      "Monitor early symptoms"
+    ]
+  },
+
+  "Tomato___Tomato_YellowLeaf__Curl_Virus": {
+    "treatment": [
+      "Remove infected plants",
+      "Control whiteflies using insecticides",
+      "Use reflective mulch",
+      "Isolate infected area"
+    ],
+    "prevention": [
+      "Use virus-resistant varieties",
+      "Control insect vectors",
+      "Use insect-proof nets",
+      "Avoid nearby infected fields"
+    ]
+  },
+
+  "Tomato___healthy": {
+    "treatment": [
+      "No treatment required",
+      "Continue regular monitoring",
+      "Maintain proper nutrition",
+      "Ensure adequate watering"
+    ],
+    "prevention": [
+      "Practice crop rotation",
+      "Maintain field hygiene",
+      "Monitor pests",
+      "Avoid overwatering"
+    ]
+  },
+
+  "Squash___Powdery_mildew": {
+  "treatment": [
+    "Apply fungicides containing Sulfur, Myclobutanil, or Potassium Bicarbonate",
+    "Remove and destroy heavily infected leaves",
+    "Spray Neem oil or horticultural oil for mild infections",
+    "Repeat fungicide application every 7–10 days"
+  ],
+  "prevention": [
+    "Use powdery mildew–resistant squash varieties",
+    "Maintain proper plant spacing and air circulation",
+    "Avoid excessive nitrogen fertilization",
+    "Water plants at the base instead of overhead"
+  ]
+}
+
+
+}

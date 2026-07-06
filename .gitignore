@@ -1,0 +1,35 @@
+# Python
+**/venv/
+**/venv311/
+**/__pycache__/
+*.pyc
+
+# Node
+**/node_modules/
+**/dist/
+**/build/
+
+# ML Models
+*.h5
+*.keras
+*.pt
+*.pth
+*.onnx
+
+# Videos
+*.mp4
+*.mov
+*.avi
+
+# Environment
+.env
+*.env
+
+# VS Code
+.vscode/
+
+# ML Models
+*.h5
+
+# Videos
+*.mp4
