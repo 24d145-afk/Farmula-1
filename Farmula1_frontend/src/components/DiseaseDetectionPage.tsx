@@ -12,7 +12,7 @@ import { Card } from "./ui/card";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-
+import { API_BASE } from "../config";
 export function DiseaseDetectionPage() {
   const [scanning, setScanning] = useState(false);
   const [detected, setDetected] = useState(false);
@@ -24,7 +24,7 @@ export function DiseaseDetectionPage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("http://127.0.0.1:8000/auth/farmer/me", {
+    fetch("${API_BASE}/auth/farmer/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -38,7 +38,7 @@ export function DiseaseDetectionPage() {
       .catch(() => {});
 
     // Load saved theme
-    fetch("http://127.0.0.1:8000/farmer/theme", {
+    fetch("${API_BASE}/farmer/theme", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -71,7 +71,7 @@ export function DiseaseDetectionPage() {
       const formData = new FormData();
       formData.append("file", imageFile);
       const response = await fetch(
-        "http://127.0.0.1:8000/api/predict-disease",
+        "${API_BASE}/api/predict-disease",
         {
           method: "POST",
           body: formData,
@@ -134,7 +134,7 @@ export function DiseaseDetectionPage() {
               onClick={async () => {
                 const newTheme = theme === "dark" ? "light" : "dark";
                 setTheme(newTheme);
-                await fetch("http://127.0.0.1:8000/farmer/theme", {
+                await fetch("${API_BASE}/farmer/theme", {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json",

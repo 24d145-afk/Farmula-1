@@ -4,7 +4,7 @@ import {
   Shield, Calendar, Image as ImageIcon, Lightbulb, X
 } from 'lucide-react';
 import { Button } from './ui/button';
-
+import { API_BASE } from "../config";
 const PlantationGuidePage = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
@@ -175,7 +175,7 @@ const PlantationGuidePage = () => {
                 onClick={async () => {
                   const newTheme = theme === 'dark' ? 'light' : 'dark';
                   setTheme(newTheme);
-                  await fetch("http://127.0.0.1:8000/farmer/theme", {
+                  await fetch("${API_BASE}/farmer/theme", {
                     method: "PUT",
                     headers: {
                       "Content-Type": "application/json",

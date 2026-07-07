@@ -5,7 +5,7 @@ import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
-
+import { API_BASE } from "../config";
 
 
 /* ================= TYPES ================= */
@@ -37,7 +37,7 @@ export function PolicyPage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("http://127.0.0.1:8000/auth/farmer/me", {
+    fetch("${API_BASE}/auth/farmer/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -51,7 +51,7 @@ export function PolicyPage() {
       .catch(() => {});
 
     // Load saved theme
-    fetch("http://127.0.0.1:8000/farmer/theme", {
+    fetch("${API_BASE}/farmer/theme", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -83,14 +83,14 @@ export function PolicyPage() {
     if (filterCategory) params.append('category', filterCategory);
 
     const schemesRes = await fetch(
-      `http://localhost:8000/policy/schemes?${params.toString()}`
+      `${API_BASE}/policy/schemes?${params.toString()}`
     );
     const schemesData = await schemesRes.json();
 
-    const appliedRes = await fetch('http://localhost:8000/policy/applied');
+    const appliedRes = await fetch('${API_BASE}/policy/applied');
     const appliedData = await appliedRes.json();
 
-    const statsRes = await fetch('http://localhost:8000/policy/stats');
+    const statsRes = await fetch('${API_BASE}/policy/stats');
     const statsData = await statsRes.json();
 
     setSchemes(schemesData);
@@ -223,7 +223,7 @@ export function PolicyPage() {
               onClick={async () => {
                 const newTheme = theme === "dark" ? "light" : "dark";
                 setTheme(newTheme);
-                await fetch("http://127.0.0.1:8000/farmer/theme", {
+                await fetch("${API_BASE}/farmer/theme", {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json",
@@ -357,7 +357,7 @@ export function PolicyPage() {
                           disabled={applied}
                           onClick={async () => {
                             await fetch(
-                              `http://localhost:8000/policy/apply/${scheme.id}`,
+                              `${API_BASE}/policy/apply/${scheme.id}`,
                               { method: 'POST' }
                             );
                             window.open(scheme.apply_url, '_blank');

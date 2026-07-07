@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
+import { API_BASE } from "../config";
 import {
     Sprout,
     TrendingUp,
@@ -24,7 +25,7 @@ export function ExplorePage({ onNavigate }: ExplorePageProps) {
 
     useEffect(() => {
         // Load farmer profile
-        fetch("http://127.0.0.1:8000/auth/farmer/me", {
+        fetch("${API_BASE}/auth/farmer/me", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`,
             },
@@ -38,7 +39,7 @@ export function ExplorePage({ onNavigate }: ExplorePageProps) {
             .catch(() => { });
 
         // Load saved theme
-        fetch("http://127.0.0.1:8000/farmer/theme", {
+        fetch("${API_BASE}/farmer/theme", {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("access_token")}`,
             },
@@ -144,7 +145,7 @@ export function ExplorePage({ onNavigate }: ExplorePageProps) {
                             onClick={async () => {
                                 const newTheme = theme === "dark" ? "light" : "dark";
                                 setTheme(newTheme);
-                                await fetch("http://127.0.0.1:8000/farmer/theme", {
+                                await fetch("${API_BASE}/farmer/theme", {
                                     method: "PUT",
                                     headers: {
                                         "Content-Type": "application/json",

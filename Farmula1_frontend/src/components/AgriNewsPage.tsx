@@ -13,7 +13,7 @@ import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
 import { Input } from "./ui/input";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-
+import { API_BASE } from "../config";
 /* =========================
    Backend News Interface
 ========================= */
@@ -38,7 +38,7 @@ export function AgriNewsPage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("http://127.0.0.1:8000/auth/farmer/me", {
+    fetch("`${API_BASE}/auth/farmer/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -52,7 +52,7 @@ export function AgriNewsPage() {
       .catch(() => { });
 
     // Load saved theme
-    fetch("http://127.0.0.1:8000/farmer/theme", {
+    fetch("`${API_BASE}/farmer/theme", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -71,7 +71,7 @@ export function AgriNewsPage() {
      Fetch news from backend
   ========================= */
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/agriculture-news")
+    fetch("`${API_BASE}/api/agriculture-news")
       .then((res) => res.json())
       .then((data) => {
         setNewsArticles(data);
@@ -138,7 +138,7 @@ export function AgriNewsPage() {
                   onClick={async () => {
                     const newTheme = theme === "dark" ? "light" : "dark";
                     setTheme(newTheme);
-                    await fetch("http://127.0.0.1:8000/farmer/theme", {
+                    await fetch(`${API_BASE}/farmer/theme`, {
                       method: "PUT",
                       headers: {
                         "Content-Type": "application/json",
@@ -205,7 +205,7 @@ export function AgriNewsPage() {
                 onClick={async () => {
                   const newTheme = theme === "dark" ? "light" : "dark";
                   setTheme(newTheme);
-                  await fetch("http://127.0.0.1:8000/farmer/theme", {
+                  await fetch("`${API_BASE}/farmer/theme", {
                     method: "PUT",
                     headers: {
                       "Content-Type": "application/json",

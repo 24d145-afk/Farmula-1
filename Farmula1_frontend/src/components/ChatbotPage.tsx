@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, JSX } from 'react';
 import { Send, Bot, User, Upload, FileText, CheckCircle, AlertCircle, Database, Sprout, Languages, Sparkles, WifiOff } from 'lucide-react';
-
+import { API_BASE } from "../config";
 type Message = {
   type: 'bot' | 'user';
   text: string;
@@ -31,7 +31,7 @@ export default function App() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     // Load farmer profile
-    fetch("http://127.0.0.1:8000/auth/farmer/me", {
+    fetch("${API_BASE}/auth/farmer/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -45,7 +45,7 @@ export default function App() {
       .catch(() => {});
 
     // Load saved theme
-    fetch("http://127.0.0.1:8000/farmer/theme", {
+    fetch("${API_BASE}/farmer/theme", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -61,7 +61,6 @@ export default function App() {
 
 
 
-  const API_BASE = 'http://localhost:8000';
 
   // Format bot message to handle markdown-style formatting
   const formatBotMessage = (text: string, messageType: 'bot' | 'user') => {
@@ -193,7 +192,7 @@ export default function App() {
       // Add offline message
       setMessages([{
         type: 'bot',
-        text: '⚠️ Backend server is not connected. Please start your backend server at http://localhost:8000 to use the AI assistant features.',
+        text: '⚠️ Backend server is not connected. Please start your backend server at ${API_BASE} to use the AI assistant features.',
         time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
       }]);
     }
@@ -260,7 +259,7 @@ export default function App() {
     if (!backendConnected) {
       const errorMessage: Message = {
         type: 'bot',
-        text: '❌ Cannot send message. Backend server is not connected. Please start your server at http://localhost:8000',
+        text: '❌ Cannot send message. Backend server is not connected. Please start your server at ${API_BASE}',
         time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -308,7 +307,7 @@ export default function App() {
       setBackendConnected(false);
       setMessages(prev => [...prev, {
         type: 'bot',
-        text: '❌ Sorry, I encountered an error. The backend server may be offline. Please check if your server is running at http://localhost:8000',
+        text: '❌ Sorry, I encountered an error. The backend server may be offline. Please check if your server is running at ${API_BASE}',
         time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
       }]);
     } finally {
@@ -406,7 +405,7 @@ export default function App() {
                   setTheme(newTheme);
                   if (backendConnected) {
                     try {
-                      await fetch("http://127.0.0.1:8000/farmer/theme", {
+                      await fetch("${API_BASE}/farmer/theme", {
                         method: "PUT",
                         headers: {
                           "Content-Type": "application/json",
@@ -451,7 +450,7 @@ export default function App() {
                 <AlertCircle className="w-5 h-5 text-orange-200" />
                 <div className="flex-1">
                   <span className="text-white text-sm font-semibold">Backend Server Not Connected</span>
-                  <p className="text-orange-100 text-xs mt-1">Please start your backend server at <code className="bg-black/20 px-1 rounded">http://localhost:8000</code></p>
+                  <p className="text-orange-100 text-xs mt-1">Please start your backend server at <code className="bg-black/20 px-1 rounded">${API_BASE}</code></p>
                 </div>
                 <button
                   onClick={fetchKBStatus}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Sprout, Phone, MapPin, Star, ShoppingBag } from "lucide-react";
-
+import { API_BASE } from "../config";
 type Shop = {
   shop_name: string;
   category: string;
@@ -38,7 +38,7 @@ export function EcommercePage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("http://127.0.0.1:8000/auth/farmer/me", {
+    fetch("${API_BASE}/auth/farmer/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -54,7 +54,7 @@ export function EcommercePage() {
       });
 
     // Load saved theme
-    fetch("http://127.0.0.1:8000/farmer/theme", {
+    fetch("${API_BASE}/farmer/theme", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -70,7 +70,7 @@ export function EcommercePage() {
 
   const fetchShops = async () => {
     setLoading(true);
-    let url = "http://127.0.0.1:8000/shops";
+    let url = "${API_BASE}/shops";
 
     const params = new URLSearchParams();
     if (district) params.append("district", district);

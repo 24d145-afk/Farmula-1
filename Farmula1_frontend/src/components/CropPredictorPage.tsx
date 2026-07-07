@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { API_BASE } from "../config";
 import {
   Brain,
   Leaf,
@@ -107,7 +108,7 @@ export function CropPredictorPage() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
   useEffect(() => {
     // Load farmer profile
-    fetch("http://127.0.0.1:8000/auth/farmer/me", {
+    fetch("${API_BASE}/auth/farmer/me", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -121,7 +122,7 @@ export function CropPredictorPage() {
       .catch(() => { });
 
     // Load saved theme
-    fetch("http://127.0.0.1:8000/farmer/theme", {
+    fetch("${API_BASE}/farmer/theme", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -144,7 +145,7 @@ export function CropPredictorPage() {
     setApiError(null);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/crop/predict', {
+      const response = await fetch('${API_BASE}/crop/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -272,7 +273,7 @@ export function CropPredictorPage() {
               onClick={async () => {
                 const newTheme = theme === "dark" ? "light" : "dark";
                 setTheme(newTheme);
-                await fetch("http://127.0.0.1:8000/farmer/theme", {
+                await fetch("${API_BASE}/farmer/theme", {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json",

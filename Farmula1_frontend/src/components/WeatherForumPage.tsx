@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MapPin, RefreshCw } from "lucide-react";
-
+import { API_BASE } from "../config";
 export function WeatherForumPage() {
   const [city, setCity] = useState("New Delhi");
   const [weatherData, setWeatherData] = useState<any>(null);
@@ -14,7 +14,7 @@ export function WeatherForumPage() {
       setError("");
 
       const res = await fetch(
-        `http://127.0.0.1:8000/api/weather?city=${selectedCity || city}`
+        `${API_BASE}/api/weather?city=${selectedCity || city}`
       );
       const data = await res.json();
 
@@ -38,7 +38,7 @@ export function WeatherForumPage() {
     }
 
     const res = await fetch(
-      `http://127.0.0.1:8000/api/cities?q=${value}`
+      `${API_BASE}/api/cities?q=${value}`
     );
     const data = await res.json();
     setSuggestions(data);

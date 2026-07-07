@@ -8,7 +8,7 @@ import {
   FaClipboardList,
   FaPaperPlane,
 } from "react-icons/fa";
-
+import { API_BASE } from "../config";
 type SellItem = {
   id?: number;
   name: string;
@@ -53,24 +53,24 @@ export function MarketplacePage() {
   /* ---------------- FETCH EXISTING DATA ---------------- */
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/marketplace/sell")
+    fetch("${API_BASE}/api/marketplace/sell")
       .then(res => res.json())
       .then(data => Array.isArray(data) && setSellList(data))
       .catch(() => { });
 
-    fetch("http://127.0.0.1:8000/api/marketplace/buy")
+    fetch("${API_BASE}/api/marketplace/buy")
       .then(res => res.json())
       .then(data => Array.isArray(data) && setBuyList(data))
       .catch(() => { });
   }, []);
   useEffect(() => {
-  fetch("http://127.0.0.1:8000/api/marketplace/notifications")
+  fetch("${API_BASE}/api/marketplace/notifications")
     .then(res => res.json())
     .then(data => Array.isArray(data) && setMatches(data))
     .catch(() => { });
 }, []);
   useEffect(() => {
-  fetch("http://127.0.0.1:8000/api/marketplace/transactions")
+  fetch("${API_BASE}/api/marketplace/transactions")
     .then(res => res.json())
     .then(data => Array.isArray(data) && setTransactions(data))
     .catch(() => { });
@@ -79,13 +79,13 @@ export function MarketplacePage() {
 
   /* ---------------- HANDLERS ---------------- */
   const refreshNotifications = async () => {
-  const res = await fetch("http://127.0.0.1:8000/api/marketplace/notifications");
+  const res = await fetch("${API_BASE}/api/marketplace/notifications");
   const data = await res.json();
   setMatches(Array.isArray(data) ? data : []);
 };
 
   const addSellProduct = async () => {
-    const res = await fetch("http://127.0.0.1:8000/api/marketplace/sell", {
+    const res = await fetch("${API_BASE}/api/marketplace/sell", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(sellForm),
@@ -104,7 +104,7 @@ export function MarketplacePage() {
   };
 
   const addBuyRequest = async () => {
-    const res = await fetch("http://127.0.0.1:8000/api/marketplace/buy", {
+    const res = await fetch("${API_BASE}/api/marketplace/buy", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(buyForm),
@@ -127,7 +127,7 @@ export function MarketplacePage() {
   if (!id || !name) return;
 
   await fetch(
-    `http://127.0.0.1:8000/api/marketplace/sell/${id}?name=${encodeURIComponent(name)}`,
+    `${API_BASE}/api/marketplace/sell/${id}?name=${encodeURIComponent(name)}`,
     { method: "DELETE" }
   );
 
@@ -139,7 +139,7 @@ export function MarketplacePage() {
   if (!id || !name) return;
 
   await fetch(
-    `http://127.0.0.1:8000/api/marketplace/buy/${id}?name=${encodeURIComponent(name)}`,
+    `${API_BASE}/api/marketplace/buy/${id}?name=${encodeURIComponent(name)}`,
     { method: "DELETE" }
   );
 
@@ -220,16 +220,16 @@ export function MarketplacePage() {
             <button
   onClick={async () => {
     await fetch(
-      `http://127.0.0.1:8000/api/marketplace/match/${match.id}/accept?accepter=${activeTab === "sell" ? match.seller : match.buyer}`,
+      `${API_BASE}/api/marketplace/match/${match.id}/accept?accepter=${activeTab === "sell" ? match.seller : match.buyer}`,
       { method: "POST" }
     );
 
     // 🔄 Refresh data locally (NO PAGE RELOAD)
     const [nRes, tRes, sRes, bRes] = await Promise.all([
-      fetch("http://127.0.0.1:8000/api/marketplace/notifications"),
-      fetch("http://127.0.0.1:8000/api/marketplace/transactions"),
-      fetch("http://127.0.0.1:8000/api/marketplace/sell"),
-      fetch("http://127.0.0.1:8000/api/marketplace/buy"),
+      fetch("${API_BASE}/api/marketplace/notifications"),
+      fetch("${API_BASE}/api/marketplace/transactions"),
+      fetch("${API_BASE}/api/marketplace/sell"),
+      fetch("${API_BASE}/api/marketplace/buy"),
     ]);
 
     setMatches(await nRes.json());
