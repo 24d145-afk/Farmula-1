@@ -33,3 +33,5 @@
 
 # Videos
 *.mp4
+# Allow the deployed disease detection model
+!disease_ml_service/model/plant_disease_model.h5
