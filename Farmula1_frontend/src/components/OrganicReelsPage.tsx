@@ -2,33 +2,30 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Play, Pause } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-/* 🔹 IMPORT VIDEOS */
-import v1 from "../assets/videos/1.mp4";
-import v2 from "../assets/videos/2.mp4";
-import v3 from "../assets/videos/3.mp4";
-import v4 from "../assets/videos/4.mp4";
-import v5 from "../assets/videos/5.mp4";
-import v6 from "../assets/videos/6.mp4";
-import v7 from "../assets/videos/7.mp4";
-import v8 from "../assets/videos/8.mp4";
-import v9 from "../assets/videos/9.mp4";
-import v10 from "../assets/videos/10.mp4";
-import v11 from "../assets/videos/11.mp4";
-import v12 from "../assets/videos/12.mp4";
-import v13 from "../assets/videos/13.mp4";
-import v14 from "../assets/videos/14.mp4";
-import v15 from "../assets/videos/15.mp4";
-import v16 from "../assets/videos/16.mp4";
-import v17 from "../assets/videos/17.mp4";
-import v18 from "../assets/videos/18.mp4";
-import v19 from "../assets/videos/19.mp4";
-import v20 from "../assets/videos/20.mp4";
+const CLOUD = "https://res.cloudinary.com/dr3rccom6/video/upload/v1/";
 
 const videos = [
-  v1, v2, v3, v4, v5,
-  v6, v7, v8, v9, v10,
-  v11, v12, v13, v14, v15,
-  v16, v17, v18, v19, v20
+  `${CLOUD}reel1.mp4`,
+  `${CLOUD}reel2.mp4`,
+  `${CLOUD}reel3.mp4`,
+  `${CLOUD}reel4.mp4`,
+  `${CLOUD}reel5.mp4`,
+  `${CLOUD}reel6.mp4`,
+  `${CLOUD}reel7.mp4`,
+  `${CLOUD}reel8.mp4`,
+  `${CLOUD}reel9.mp4`,
+  `${CLOUD}reel10.mp4`,
+
+  // reel11 not uploaded yet
+  `${CLOUD}reel12.mp4`,
+  `${CLOUD}reel13.mp4`,
+  `${CLOUD}reel14.mp4`,
+  `${CLOUD}reel15.mp4`,
+  `${CLOUD}reel16.mp4`,
+  `${CLOUD}reel17.mp4`,
+  `${CLOUD}reel18.mp4`,
+  `${CLOUD}reel19.mp4`,
+  `${CLOUD}reel20.mp4`,
 ];
 
 interface OrganicReelsPageProps {
