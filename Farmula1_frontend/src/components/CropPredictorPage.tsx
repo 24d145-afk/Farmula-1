@@ -108,7 +108,7 @@ export function CropPredictorPage() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
   useEffect(() => {
     // Load farmer profile
-    fetch("${API_BASE}/auth/farmer/me", {
+    fetch(`${API_BASE}/auth/farmer/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -122,7 +122,7 @@ export function CropPredictorPage() {
       .catch(() => { });
 
     // Load saved theme
-    fetch("${API_BASE}/farmer/theme", {
+    fetch(`${API_BASE}/farmer/theme`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -145,7 +145,7 @@ export function CropPredictorPage() {
     setApiError(null);
 
     try {
-      const response = await fetch('${API_BASE}/crop/predict', {
+      const response = await fetch(`${API_BASE}/crop/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -273,7 +273,7 @@ export function CropPredictorPage() {
               onClick={async () => {
                 const newTheme = theme === "dark" ? "light" : "dark";
                 setTheme(newTheme);
-                await fetch("${API_BASE}/farmer/theme", {
+                await fetch(`${API_BASE}/farmer/theme`, {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json",

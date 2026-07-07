@@ -53,24 +53,24 @@ export function MarketplacePage() {
   /* ---------------- FETCH EXISTING DATA ---------------- */
 
   useEffect(() => {
-    fetch("${API_BASE}/api/marketplace/sell")
+    fetch(`${API_BASE}/api/marketplace/sell`)
       .then(res => res.json())
       .then(data => Array.isArray(data) && setSellList(data))
       .catch(() => { });
 
-    fetch("${API_BASE}/api/marketplace/buy")
+    fetch(`${API_BASE}/api/marketplace/buy`)
       .then(res => res.json())
       .then(data => Array.isArray(data) && setBuyList(data))
       .catch(() => { });
   }, []);
   useEffect(() => {
-  fetch("${API_BASE}/api/marketplace/notifications")
+  fetch(`${API_BASE}/api/marketplace/notifications`)
     .then(res => res.json())
     .then(data => Array.isArray(data) && setMatches(data))
     .catch(() => { });
 }, []);
   useEffect(() => {
-  fetch("${API_BASE}/api/marketplace/transactions")
+  fetch(`${API_BASE}/api/marketplace/transactions`)
     .then(res => res.json())
     .then(data => Array.isArray(data) && setTransactions(data))
     .catch(() => { });
@@ -79,13 +79,13 @@ export function MarketplacePage() {
 
   /* ---------------- HANDLERS ---------------- */
   const refreshNotifications = async () => {
-  const res = await fetch("${API_BASE}/api/marketplace/notifications");
+  const res = await fetch(`${API_BASE}/api/marketplace/notifications`);
   const data = await res.json();
   setMatches(Array.isArray(data) ? data : []);
 };
 
   const addSellProduct = async () => {
-    const res = await fetch("${API_BASE}/api/marketplace/sell", {
+    const res = await fetch(`${API_BASE}/api/marketplace/sell`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(sellForm),
@@ -104,7 +104,7 @@ export function MarketplacePage() {
   };
 
   const addBuyRequest = async () => {
-    const res = await fetch("${API_BASE}/api/marketplace/buy", {
+    const res = await fetch(`${API_BASE}/api/marketplace/buy`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(buyForm),
@@ -226,10 +226,10 @@ export function MarketplacePage() {
 
     // 🔄 Refresh data locally (NO PAGE RELOAD)
     const [nRes, tRes, sRes, bRes] = await Promise.all([
-      fetch("${API_BASE}/api/marketplace/notifications"),
-      fetch("${API_BASE}/api/marketplace/transactions"),
-      fetch("${API_BASE}/api/marketplace/sell"),
-      fetch("${API_BASE}/api/marketplace/buy"),
+      fetch(`${API_BASE}/api/marketplace/notifications`),
+      fetch(`${API_BASE}/api/marketplace/transactions`),
+      fetch(`${API_BASE}/api/marketplace/sell`),
+      fetch(`${API_BASE}/api/marketplace/buy`),
     ]);
 
     setMatches(await nRes.json());

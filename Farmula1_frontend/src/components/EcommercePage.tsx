@@ -38,7 +38,7 @@ export function EcommercePage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("${API_BASE}/auth/farmer/me", {
+    fetch(`${API_BASE}/auth/farmer/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -54,7 +54,7 @@ export function EcommercePage() {
       });
 
     // Load saved theme
-    fetch("${API_BASE}/farmer/theme", {
+    fetch(`${API_BASE}/farmer/theme`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -70,7 +70,7 @@ export function EcommercePage() {
 
   const fetchShops = async () => {
     setLoading(true);
-    let url = "${API_BASE}/shops";
+    let url = `${API_BASE}/shops`;
 
     const params = new URLSearchParams();
     if (district) params.append("district", district);

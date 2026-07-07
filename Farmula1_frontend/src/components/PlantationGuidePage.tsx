@@ -175,7 +175,7 @@ const PlantationGuidePage = () => {
                 onClick={async () => {
                   const newTheme = theme === 'dark' ? 'light' : 'dark';
                   setTheme(newTheme);
-                  await fetch("${API_BASE}/farmer/theme", {
+                  await fetch(`${API_BASE}/farmer/theme`, {
                     method: "PUT",
                     headers: {
                       "Content-Type": "application/json",

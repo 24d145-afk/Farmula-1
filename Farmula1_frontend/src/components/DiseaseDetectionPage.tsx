@@ -24,7 +24,7 @@ export function DiseaseDetectionPage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("${API_BASE}/auth/farmer/me", {
+    fetch(`${API_BASE}/auth/farmer/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -38,7 +38,7 @@ export function DiseaseDetectionPage() {
       .catch(() => {});
 
     // Load saved theme
-    fetch("${API_BASE}/farmer/theme", {
+    fetch(`${API_BASE}/farmer/theme`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -71,7 +71,7 @@ export function DiseaseDetectionPage() {
       const formData = new FormData();
       formData.append("file", imageFile);
       const response = await fetch(
-        "${API_BASE}/api/predict-disease",
+        `${API_BASE}/api/predict-disease`,
         {
           method: "POST",
           body: formData,
@@ -134,7 +134,7 @@ export function DiseaseDetectionPage() {
               onClick={async () => {
                 const newTheme = theme === "dark" ? "light" : "dark";
                 setTheme(newTheme);
-                await fetch("${API_BASE}/farmer/theme", {
+                await fetch(`${API_BASE}/farmer/theme`, {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json",

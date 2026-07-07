@@ -38,7 +38,7 @@ export function AgriNewsPage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("`${API_BASE}/auth/farmer/me", {
+    fetch(`${API_BASE}/auth/farmer/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -52,7 +52,7 @@ export function AgriNewsPage() {
       .catch(() => { });
 
     // Load saved theme
-    fetch("`${API_BASE}/farmer/theme", {
+    fetch(`${API_BASE}/farmer/theme`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -71,7 +71,7 @@ export function AgriNewsPage() {
      Fetch news from backend
   ========================= */
   useEffect(() => {
-    fetch("`${API_BASE}/api/agriculture-news")
+    fetch(`${API_BASE}/api/agriculture-news`)
       .then((res) => res.json())
       .then((data) => {
         setNewsArticles(data);
@@ -205,7 +205,7 @@ export function AgriNewsPage() {
                 onClick={async () => {
                   const newTheme = theme === "dark" ? "light" : "dark";
                   setTheme(newTheme);
-                  await fetch("`${API_BASE}/farmer/theme", {
+                  await fetch(`${API_BASE}/farmer/theme`, {
                     method: "PUT",
                     headers: {
                       "Content-Type": "application/json",

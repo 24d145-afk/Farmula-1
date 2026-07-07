@@ -37,7 +37,7 @@ export function PolicyPage() {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("${API_BASE}/auth/farmer/me", {
+    fetch(`${API_BASE}/auth/farmer/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -51,7 +51,7 @@ export function PolicyPage() {
       .catch(() => {});
 
     // Load saved theme
-    fetch("${API_BASE}/farmer/theme", {
+    fetch(`${API_BASE}/farmer/theme`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -87,10 +87,10 @@ export function PolicyPage() {
     );
     const schemesData = await schemesRes.json();
 
-    const appliedRes = await fetch('${API_BASE}/policy/applied');
+    const appliedRes = await fetch(`${API_BASE}/policy/applied`);
     const appliedData = await appliedRes.json();
 
-    const statsRes = await fetch('${API_BASE}/policy/stats');
+    const statsRes = await fetch(`${API_BASE}/policy/stats`);
     const statsData = await statsRes.json();
 
     setSchemes(schemesData);
@@ -223,7 +223,7 @@ export function PolicyPage() {
               onClick={async () => {
                 const newTheme = theme === "dark" ? "light" : "dark";
                 setTheme(newTheme);
-                await fetch("${API_BASE}/farmer/theme", {
+                await fetch(`${API_BASE}/farmer/theme`, {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json",

@@ -167,7 +167,7 @@ export function FarmerDashboard({ onNavigate }: FarmerDashboardProps) {
 
   useEffect(() => {
     // Load farmer profile
-    fetch("${API_BASE}/auth/farmer/me", {
+    fetch(`${API_BASE}/auth/farmer/me`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -179,7 +179,7 @@ export function FarmerDashboard({ onNavigate }: FarmerDashboardProps) {
         }
       });
     // Load saved theme
-    fetch("${API_BASE}/farmer/theme", {
+    fetch(`${API_BASE}/farmer/theme`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("access_token")}`,
       },
@@ -234,7 +234,7 @@ export function FarmerDashboard({ onNavigate }: FarmerDashboardProps) {
               onClick={async () => {
                 const newTheme = theme === "dark" ? "light" : "dark";
                 setTheme(newTheme);
-                await fetch("${API_BASE}/farmer/theme", {
+                await fetch(`${API_BASE}/farmer/theme`, {
                   method: "PUT",
                   headers: {
                     "Content-Type": "application/json",
