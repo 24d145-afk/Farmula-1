@@ -1,5 +1,12 @@
 [
   {
+    "product": "Rice",
+    "seller": "Mritiika",
+    "buyer": "Prii",
+    "quantity_traded": "5 Kg",
+    "id": 14
+  },
+  {
     "product": "Tomato",
     "seller": "Priya",
     "buyer": "Priya",
